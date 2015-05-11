@@ -7,7 +7,7 @@ import java.awt.event.*;
 public class MenuPrincipal extends JFrame implements ActionListener {
 	private JTextField textfield1;
 	private JLabel label1;
-	private JButton boton1, boton2;
+	private JButton boton1, boton2, boton3;
 	
 
 	public MenuPrincipal() {
@@ -31,6 +31,10 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		boton2.setBounds(220, 80, 160, 25);
 		add(boton2);
 		boton2.addActionListener(this);
+		boton3 = new JButton("Edat persona");
+		boton3.setBounds(220, 110, 160, 25);
+		add(boton3);
+		boton3.addActionListener(this);
 	}
 	
 	public static void main(String[] ar) {
@@ -54,6 +58,12 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		       }
 		if (e.getSource() == boton2) {
 			Compte formulario = new Compte("Client");
+			formulario.introduirdades();
+			formulario.setBounds(0, 0, 450, 200);
+			formulario.setVisible(true);
+		}
+		if (e.getSource() == boton3) {
+			EdatPersona formulario = new EdatPersona();
 			formulario.introduirdades();
 			formulario.setBounds(0, 0, 450, 200);
 			formulario.setVisible(true);
